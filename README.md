@@ -19,7 +19,15 @@ We need to play a single round of Ghost before thinking about a full game of Gho
 
 ```#initialize```
 
+```@players```, ```@fragment```, and ```@dictionary``` are instance variables, and we can use a Hash or Set for fast reads from memory.
+
 ```#play_round```
+All of the game logic should be located in this instance method.
+* ```#current_player```
+* ```#previous_player```
+* ```#next_player!``` will update ```current_player``` and ```previous_player```
+* ```#take_turn(player)``` will get a string from the player until it is a valid string, then updates the fragment and checks the dictionary. An error message about invalid guesses would be great to put here.
+*```#valid_play?(string)``` will check the ```string``` is an alphabetical character, and there are words spellable when adding it to the ```fragment```.
 
 ### Player
 The player may need a ```name```, but they should be able to ```::initialize```, ```::guess```, and ```::alert_invalid_guess```
