@@ -12,6 +12,7 @@ class Game
 
     def initialize(*players) # multiple players allowed
         @fragment = "" # initializes as an empty string at the beginning of the round
-        @dictionary - []
+        @players = players.flatten # an array of players
+        @dictionary - Set.new(File.read("dictionary.txt").split("\n")) # The set prevents duplicate values being saved
     end
 end
